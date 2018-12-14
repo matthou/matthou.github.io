@@ -11848,7 +11848,7 @@ MatlibPlot</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11874,7 +11874,7 @@ MatlibPlot</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train.csv&#39;</span><span class="p">)</span>
@@ -11904,7 +11904,7 @@ MatlibPlot</code></pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -12033,7 +12033,7 @@ MatlibPlot</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2>PART 1 - GETTING OUR FEET WET</h2><h2>Step 1: Lets take a look at what we got!</h2><p>Before doing anything crazy, lets first look at what we have to look at.  We can do this by visualizing our data by creating plots through Matplotlib.</p>
-<p><h3>Lets plot two basic histograms to get ourselves warmed up!</h3>
+<p><h2>Lets plot two basic histograms to get ourselves warmed up!</h2>
 <br></p>
 <p><h3>The Distribution of Ages of Passengers</h3>
 Here we can see that from our histogram it appears that most of the people on board the titanic were between the ages of 20-40 years old with ages greater than this dropping off quickly.  It also appears that there were about 100 people on board that were children between the ages of 0-20 years old as well.
@@ -12046,7 +12046,7 @@ We can see here that most people on board paid between \$0-\$20 to be on the tit
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ages</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12137,7 +12137,7 @@ We can see here that most people on board paid between \$0-\$20 to be on the tit
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">survived</span> <span class="o">=</span> <span class="mi">0</span>
@@ -12155,7 +12155,7 @@ We can see here that most people on board paid between \$0-\$20 to be on the tit
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Percentage of people who died: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">died</span><span class="o">/</span><span class="n">total</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Survived vs. Died&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="n">survived</span><span class="p">,</span> <span class="n">died</span><span class="p">],</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="s1">&#39;Died&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="n">survived</span><span class="p">,</span> <span class="n">died</span><span class="p">],</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="s1">&#39;Died&#39;</span><span class="p">],</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -12192,7 +12192,7 @@ Percentage of people who died: 61.61616161616161%
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -12207,7 +12207,7 @@ Percentage of people who died: 61.61616161616161%
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>Step 2: Diving a bit Deeper - What percentage of people who survived are men vs. women?</h2><p>Now that we have some basic information, we can dive in a bit deeper on the situation and look at which sex had a higher rate of survival, men or women?</p>
+<h2>Step 3: Diving a bit Deeper - What percentage of people who survived are men vs. women?</h2><p>Now that we have some basic information, we can dive in a bit deeper on the situation and look at which sex had a higher rate of survival, men or women?</p>
 <p>After some calculation, we can see here that about 109 or 31.87% of the passengers who survived where men and roughly 233 or 68.13% of the passengers who survived where women.  Based on these numbers, we can see that mostly women are the ones who survived this catastrophic event.</p>
 
 </div>
@@ -12221,15 +12221,20 @@ Percentage of people who died: 61.61616161616161%
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">men_survived</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">women_survived</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span> <span class="p">(</span><span class="n">training_data</span><span class="p">)):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">men_survived</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;female&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">women_survived</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;# of men who survived: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">men_survived</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;# of women who survived: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">women_survived</span><span class="p">))</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Percentage of people who survived (men): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">men_survived</span><span class="o">/</span><span class="n">survived</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Percentage of people who died: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">women_survived</span><span class="o">/</span><span class="n">survived</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Men Survived vs. Women Survived&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="n">men_survived</span><span class="p">,</span> <span class="n">women_survived</span><span class="p">],</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Men Survived&#39;</span><span class="p">,</span> <span class="s1">&#39;Women Survived&#39;</span><span class="p">],</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;pink&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12256,6 +12261,21 @@ Percentage of people who died: 68.12865497076024%
 </div>
 </div>
 
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -12264,7 +12284,7 @@ Percentage of people who died: 68.12865497076024%
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h2>PART 2 - LET'S GET COMPLICATED!</h2>
+<p><h2>PART 2 - LET'S GET A BIT MORE COMPLICATED!</h2>
 Now that we got a feel for how to do some basic analysis of the data that we have, lets raise the stakes a bit.  Now we want to be able to predict whether or not a person would have survived the titanic through linear regression with multiple variables.</p>
 <p><h2>Step 1: Identifying the data that contributes to survival</h2>
 In order to run linear regression on our data set, we must decide what kind of data matters the most.  This is important because if we were to just include all of our data, then our linear regression model might think there are correlations that might not actually exist.  Below lets analyze each column to decide what we want to use:</p>
@@ -12284,7 +12304,7 @@ In order to run linear regression on our data set, we must decide what kind of d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;A list of the columns we have:&quot;</span><span class="p">)</span>
@@ -12331,15 +12351,15 @@ Embarked
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>Step 2: Refining our Training data</h2><p>Now that we have identified which columns we would like to use in our linear regression, we need to make sure our data is clean before building our new training data to use.</p>
-<h3>Step 2a: One-Hot-Key encoding</h3><p>For the gender, we need to computer to be able to understand the distinction between male and female by assigning a number to male and female.  In our case, we can use 1 for male and 0 for female.</p>
+<h2>Step 2: Tailoring Our Training Data to be Useable</h2><p>Now that we have identified which columns we would like to use in our linear regression, we need to make sure our data is clean before building our new training data to use.</p>
+<h3>Step 2a: One-Hot-Key encoding</h3><p>For the sex of the passengers, we need the computer to be able to understand the distinction between male and female by a value to male and female.  In our case, we can use 1 for male and 0 for female.  After applying One-Hot-Key encoding we can see that our new dataFrame now has 1's and 0's for the Sex column.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">)):</span>
@@ -12360,7 +12380,7 @@ Embarked
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12488,21 +12508,21 @@ Embarked
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3>Step 2b: Checking for NaN in our data</h3><p>There are many different ways to handle when there is a NaN in the data, but for simplicity, lets just have a set to keep track of the indecies that have a NaN so we know not to use these indecies when building our new training data.</p>
+<h3>Step 2b: Checking for NaN in our data</h3><p>There are many different ways to handle when there is a NaN in the data, but for simplicity, lets just have a set to keep track of the indexes that have a NaN so we know not to use these indexes when building our new training data. (Here we can print out our nan_indexes to see what it looks like)</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nan_indexes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">)):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">training_data</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
-        <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
+        <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
         <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span>
         <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;SibSp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
         <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
@@ -12538,14 +12558,14 @@ Embarked
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>Step 3: Building our new training data</h2><p>Now that we have cleaned up our data a bit, lets build our training data and target data</p>
+<h2>Step 3: Building our new training data and target data</h2><p>Now that we have cleaned up our data a bit, lets build our training data and target data.  The training data will contain all the columns that we discussed previously and our target data will contain whether or not the particular person has survived or not.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_train</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12560,19 +12580,43 @@ Embarked
                         <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
                         <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
         <span class="n">n_target</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="n">model1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_train</span><span class="p">,</span> <span class="n">n_target</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">n_target</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Step 4: Creating our Linear Regression Model and Testing it</h2><p>Now that our n_train has our training data and n_target has our expected results, we can go ahead and set up our linear regression model and fit the model to our data.</p>
+<p>Once we have our model fitted, we can have a little fun here and see how accurately our model could predict on our training set by calling predict on our n_train with our model.  After that we can see how our model can achieve nearly 80% accuracy.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_train</span><span class="p">,</span> <span class="n">n_target</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">n_train</span><span class="p">)</span>
 <span class="n">residuals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">)):</span>
     <span class="k">if</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
         <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">residuals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;lin_reg_predictions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
-<span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;lin_reg_residuals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">residuals</span>
-<span class="n">training_data</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">correct</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Training Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12589,56 +12633,8 @@ Embarked
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0]
+<pre>Accuracy of Training Set: 79.69187675070027%
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-65-2c277ed63b71&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span>         predictions<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">     22</span>     residuals<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>n_target<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">-</span> predictions<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 23</span><span class="ansi-red-fg"> </span>training_data<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;lin_reg_predictions&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> predictions
-<span class="ansi-green-intense-fg ansi-bold">     24</span> training_data<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;lin_reg_residuals&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> residuals
-<span class="ansi-green-intense-fg ansi-bold">     25</span> training_data
-
-<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py</span> in <span class="ansi-cyan-fg">__setitem__</span><span class="ansi-blue-fg">(self, key, value)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3114</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   3115</span>             <span class="ansi-red-fg"># set column</span>
-<span class="ansi-green-fg">-&gt; 3116</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>_set_item<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3117</span> 
-<span class="ansi-green-intense-fg ansi-bold">   3118</span>     <span class="ansi-green-fg">def</span> _setitem_slice<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> key<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py</span> in <span class="ansi-cyan-fg">_set_item</span><span class="ansi-blue-fg">(self, key, value)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3189</span> 
-<span class="ansi-green-intense-fg ansi-bold">   3190</span>         self<span class="ansi-blue-fg">.</span>_ensure_valid_index<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 3191</span><span class="ansi-red-fg">         </span>value <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_sanitize_column<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3192</span>         NDFrame<span class="ansi-blue-fg">.</span>_set_item<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> key<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3193</span> 
-
-<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py</span> in <span class="ansi-cyan-fg">_sanitize_column</span><span class="ansi-blue-fg">(self, key, value, broadcast)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3386</span> 
-<span class="ansi-green-intense-fg ansi-bold">   3387</span>             <span class="ansi-red-fg"># turn me into an ndarray</span>
-<span class="ansi-green-fg">-&gt; 3388</span><span class="ansi-red-fg">             </span>value <span class="ansi-blue-fg">=</span> _sanitize_index<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>index<span class="ansi-blue-fg">,</span> copy<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3389</span>             <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> isinstance<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>ndarray<span class="ansi-blue-fg">,</span> Index<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   3390</span>                 <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> list<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">and</span> len<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/lib/python3.6/site-packages/pandas/core/series.py</span> in <span class="ansi-cyan-fg">_sanitize_index</span><span class="ansi-blue-fg">(data, index, copy)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3996</span> 
-<span class="ansi-green-intense-fg ansi-bold">   3997</span>     <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">!=</span> len<span class="ansi-blue-fg">(</span>index<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 3998</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Length of values does not match length of &#39;</span> <span class="ansi-blue-fg">&#39;index&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   3999</span> 
-<span class="ansi-green-intense-fg ansi-bold">   4000</span>     <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> ABCIndexClass<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">and</span> <span class="ansi-green-fg">not</span> copy<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">ValueError</span>: Length of values does not match length of index</pre>
 </div>
 </div>
 
@@ -12650,9 +12646,277 @@ Embarked
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>PART 3 - LET'S START DROWNING IN CODE! (just kidding hehe)</h2>
+<h2>Step 4: Testing Our Model on New Data</h2><p>In order to test our data, we essentially need to repeat the steps done previously, making sure to do One-Hot-Key encoding on Sex, as well as checking for NaN values.  Next, we have to build our test input data as well as our test targets (test_input and tets_target respectively).</p>
+<p>After running our model on the test data, we can see it achieves an accuracy of about 95%.  Realizing this is quite a high percentage, it could be likely that we got lucky with this high accuracy.  In the next part we will compare this number with other models to see if 95% accuracy is plausible.</p>
+
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;test.csv&#39;</span><span class="p">)</span>
+<span class="n">testing_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gender_submission.csv&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="ow">or</span> <span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+
+<span class="n">nan_indexes_t</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">testing_data</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
+        <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
+        <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;SibSp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
+        <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
+        <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+        <span class="n">nan_indexes_t</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">test_input</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_target</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nan_indexes_t</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">testing_data</span>
+        <span class="n">test_input</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                        <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                        <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">x</span><span class="p">[</span><span class="s1">&#39;SibSp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                        <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+        <span class="n">test_target</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">testing_target</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">residuals_t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">correct_t</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">test_predictions</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">test_predictions</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">test_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="n">test_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">test_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">residuals_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">test_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">test_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">test_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">correct_t</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Test Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct_t</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals_t</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Accuracy of Test Set: 95.46827794561933%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>PART 3 - PLAYING AROUND WITH A DIFFERENT MODEL: RANDOM FOREST REGRESSION</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!/usr/bin/env python -W ignore::DeprecationWarning</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestRegressor</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Round &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">forest_model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
+    <span class="n">forest_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_train</span><span class="p">,</span> <span class="n">n_target</span><span class="p">)</span>
+
+    <span class="n">forest_predictions</span> <span class="o">=</span> <span class="n">forest_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">n_train</span><span class="p">)</span>
+    <span class="n">residuals_f</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">correct_f</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">forest_predictions</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">forest_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">forest_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">forest_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">residuals_f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">correct_f</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Train Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct_f</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals_f</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+
+    <span class="n">forest_predictions_t</span> <span class="o">=</span> <span class="n">forest_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span>
+    <span class="n">residuals_f_t</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">correct_f_t</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">forest_predictions_t</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">residuals_f_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">test_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">correct_f_t</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Test Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct_f_t</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals_f_t</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Round 1
+Accuracy of Train Set: 97.47899159663865%
+Accuracy of Test Set: 80.66465256797584%
+
+
+Round 2
+Accuracy of Train Set: 97.19887955182072%
+Accuracy of Test Set: 79.75830815709969%
+
+
+Round 3
+Accuracy of Train Set: 97.61904761904762%
+Accuracy of Test Set: 80.96676737160121%
+
+
+Round 4
+Accuracy of Train Set: 97.19887955182072%
+Accuracy of Test Set: 78.24773413897282%
+
+
+Round 5
+Accuracy of Train Set: 97.05882352941177%
+Accuracy of Test Set: 79.75830815709969%
+
+
+Round 6
+Accuracy of Train Set: 97.89915966386555%
+Accuracy of Test Set: 78.54984894259819%
+
+
+Round 7
+Accuracy of Train Set: 96.63865546218487%
+Accuracy of Test Set: 82.77945619335347%
+
+
+Round 8
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/ryanhou/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Accuracy of Train Set: 97.05882352941177%
+Accuracy of Test Set: 81.57099697885197%
+
+
+Round 9
+Accuracy of Train Set: 96.35854341736695%
+Accuracy of Test Set: 81.87311178247734%
+
+
+Round 10
+Accuracy of Train Set: 97.19887955182072%
+Accuracy of Test Set: 81.26888217522658%
+
+
+Round 11
+Accuracy of Train Set: 97.05882352941177%
+Accuracy of Test Set: 79.45619335347432%
+
+
+Round 12
+Accuracy of Train Set: 97.05882352941177%
+Accuracy of Test Set: 81.87311178247734%
+
+
+Round 13
+Accuracy of Train Set: 97.05882352941177%
+Accuracy of Test Set: 78.24773413897282%
+
+
+Round 14
+Accuracy of Train Set: 96.9187675070028%
+Accuracy of Test Set: 78.85196374622356%
+
+
+Round 15
+Accuracy of Train Set: 98.17927170868347%
+Accuracy of Test Set: 79.75830815709969%
+
+
+Round 16
+Accuracy of Train Set: 97.75910364145658%
+Accuracy of Test Set: 79.75830815709969%
+
+
+Round 17
+Accuracy of Train Set: 97.19887955182072%
+Accuracy of Test Set: 81.57099697885197%
+
+
+Round 18
+Accuracy of Train Set: 97.05882352941177%
+Accuracy of Test Set: 79.45619335347432%
+
+
+Round 19
+Accuracy of Train Set: 97.47899159663865%
+Accuracy of Test Set: 79.45619335347432%
+
+
+Round 20
+Accuracy of Train Set: 96.49859943977592%
+Accuracy of Test Set: 79.15407854984895%
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
