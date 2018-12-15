@@ -11775,8 +11775,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Surviving-the-Disaster-of-the-Titanic:">Surviving the Disaster of the Titanic:<a class="anchor-link" href="#Surviving-the-Disaster-of-the-Titanic:">&#182;</a></h1><h3>By: Matthew Hou</h3><h2>Background</h2><p>On April 14, 1912 the sinking of the RMS Titanic was a horrific event that included the deaths of over 1500 people when crashing into an iceburg during its voyage from Southampton to New York City.  Through this tragic event, I would like to analyze what attributes of a person would be most important in the rate of survival in catestrophic events such as this.  If you would like to read more about the sinking of the Titanic, there is a nice write-up in Wikipedia at: <a href="https://en.wikipedia.org/wiki/RMS_Titanic">https://en.wikipedia.org/wiki/RMS_Titanic</a></p>
-<p>In a more data science prospective, we will be going through how to import a dataset with pandas, analyze data within the data set through basic manipulations, visualizing our analysis through plotting with mathplotlib, as well as being able to interpret all this and putting it all together.  After doing this, we will be able to understand more about the statistically data on the Titanic and perhaps learn from this tragic experience.</p>
+<h1 id="Surviving-the-Disaster-of-the-Titanic:">Surviving the Disaster of the Titanic:<a class="anchor-link" href="#Surviving-the-Disaster-of-the-Titanic:">&#182;</a></h1><h3>By: Matthew Hou</h3><h2>Background</h2><p>On April 14, 1912 the sinking of the RMS Titanic was a horrific event that included the deaths of over 1500 people
+when crashing into an iceburg during its voyage from Southampton to New York City.  Through this tragic event, I would like to analyze the data about the passengers on board the Titanic to create a model that can help to predict the likelyhood of a person surviving another catastrophic event like this.  If you would like to read more about the sinking of the Titanic, there is a nice write-up in Wikipedia at: <a href="https://en.wikipedia.org/wiki/RMS_Titanic">https://en.wikipedia.org/wiki/RMS_Titanic</a></p>
+<p>In a more data science prospective, we will be going through how to import a dataset with pandas, analyze data within the data set through basic manipulations, visualizing our analysis through plotting with mathplotlib, as well as being able to interpret all this and putting it all together.  After doing this, we will be able to understand more about the statistical data on the Titanic and perhaps learn from this tragic experience.</p>
 
 </div>
 </div>
@@ -11841,7 +11842,7 @@ MatlibPlot</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>Step 4: Importing Python Libraries</h2><p>Now that we have everything that we need, we can begin by including the libraries we will be needing to do our analysis</p>
+<h2>Step 4: Importing Python Libraries</h2><p>Now that we have everything that we need, we can begin by including the libraries we will be needing to do our analysis.  (You might get a warning like the one below, but we do not need to worry about this because we are not even using umath)</p>
 
 </div>
 </div>
@@ -11856,9 +11857,29 @@ MatlibPlot</code></pre>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestRegressor</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/matthou/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11878,8 +11899,6 @@ MatlibPlot</code></pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train.csv&#39;</span><span class="p">)</span>
-<span class="c1">#print (np.isnan(training_data[&#39;Age&#39;].values[5]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="n">training_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
@@ -11890,17 +11909,6 @@ MatlibPlot</code></pre>
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;numpy.int64&#39;&gt;
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -12284,9 +12292,9 @@ Percentage of people who died: 68.12865497076024%
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h2>PART 2 - LET'S GET A BIT MORE COMPLICATED!</h2>
+<p><h2>PART 2 - LET'S CREATE OUR FIRST LINEAR REGRESSION MODEL!</h2>
 Now that we got a feel for how to do some basic analysis of the data that we have, lets raise the stakes a bit.  Now we want to be able to predict whether or not a person would have survived the titanic through linear regression with multiple variables.</p>
-<p><h2>Step 1: Identifying the data that contributes to survival</h2>
+<p><h2>Step 1: Identifying which attributes the data that contributes to survival</h2>
 In order to run linear regression on our data set, we must decide what kind of data matters the most.  This is important because if we were to just include all of our data, then our linear regression model might think there are correlations that might not actually exist.  Below lets analyze each column to decide what we want to use:</p>
 <p><h4>PassengerId - No</h4>-Just because your passenger ID is higher or lower does not mean you have a higher chance of surviving necessarily, so we can exclude this from our list of columns to use.</p>
 <p><h4>Survived - Yes, but is our target</h4>-This will ultimately be our target that we want our linear regression to replicate.</p>
@@ -12646,8 +12654,8 @@ Embarked
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>Step 4: Testing Our Model on New Data</h2><p>In order to test our data, we essentially need to repeat the steps done previously, making sure to do One-Hot-Key encoding on Sex, as well as checking for NaN values.  Next, we have to build our test input data as well as our test targets (test_input and tets_target respectively).</p>
-<p>After running our model on the test data, we can see it achieves an accuracy of about 95%.  Realizing this is quite a high percentage, it could be likely that we got lucky with this high accuracy.  In the next part we will compare this number with other models to see if 95% accuracy is plausible.</p>
+<h3>Step 4a: Playing around with our Linear Regession Model</h3><p>If you are a curious person and wanted to see whether the model believes a person would survive or not, we can create our own entries and feed it through the model.</p>
+<p>For example, lets compare what the model thinks the chance of survival would be for a rich person (class 1, \$99 fare) vs. a poor person (class 3, \$7 fare).  Lets also do a little comparison for age, comparing a young person (18 years old) to an old person (87 years old) and see the differences.</p>
 
 </div>
 </div>
@@ -12657,15 +12665,70 @@ Embarked
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;test.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rich_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
+<span class="n">poor_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">old_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">young_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">fun_predictions</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">rich_person</span><span class="p">,</span> <span class="n">poor_person</span><span class="p">,</span> <span class="n">young_person</span><span class="p">,</span> <span class="n">old_person</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a rich person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a poor person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a young person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a old person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predicted chance of survival for a rich person: 95.38637332658195%.
+Predicted chance of survival for a poor person: 53.77423252189032%.
+Predicted chance of survival for a young person: 80.09405257999595%.
+Predicted chance of survival for a old person: 35.05489036190623%.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Step 5: Testing Our Model on New Data</h2><p>In order to test our data, we essentially need to repeat the steps done previously, making sure to do One-Hot-Key encoding on Sex, as well as checking for NaN values.  Next, we have to build our test input data as well as our test targets (test_input and tets_target respectively).</p>
+<p>After running our model on the test data, we can see it achieves an accuracy of about 95%.  Realizing this is quite a high percentage, it could be likely that we got lucky with this high accuracy.  In the next part we will compare this number with other models to see if 95% accuracy is plausible.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Loading the Test Dataset</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;test.csv&#39;</span><span class="p">)</span>
 <span class="n">testing_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gender_submission.csv&#39;</span><span class="p">)</span>
+
+<span class="c1">#One-Hot-Key Encoding</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)):</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span> <span class="ow">or</span> <span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">testing_data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
         
-
+<span class="c1">#Checking for NaNs</span>
 <span class="n">nan_indexes_t</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">testing_data</span>
@@ -12676,6 +12739,8 @@ Embarked
         <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">or</span> 
         <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
         <span class="n">nan_indexes_t</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        
+<span class="c1">#Setting up the Testing Inputs and expected results</span>
 <span class="n">test_input</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">test_target</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">)):</span>
@@ -12688,6 +12753,8 @@ Embarked
                         <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Parch&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
                         <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
         <span class="n">test_target</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">testing_target</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="c1">#Obtaining the accuracy of the test set</span>
 <span class="n">residuals_t</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">correct_t</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">test_predictions</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span>
@@ -12729,24 +12796,26 @@ Embarked
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>PART 3 - PLAYING AROUND WITH A DIFFERENT MODEL: RANDOM FOREST REGRESSION</h2>
+<h2>PART 3 - PLAYING AROUND WITH A DIFFERENT MODEL: RANDOM FOREST REGRESSION</h2><p>After looking through our linear regression model, lets explore the other models that sklearn have to offer.  Another one we can look at is the random forest regressor.  Unlike the linear regression model, this model will have a bit of randomness so what we can do is run the model several times to see how the model performs in each of the random states.  In this case, lets suppose we ran our model 10 times.</p>
+<p>Due to its random nature, we can see here that there is some variance between each of the rounds.  We can especially see this when we make up our own test people (like we did previously).</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!/usr/bin/env python -W ignore::DeprecationWarning</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestRegressor</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#This will run 10 times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Round &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="c1">#Creating our Forest Model and fitting it with our training data</span>
     <span class="n">forest_model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
     <span class="n">forest_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_train</span><span class="p">,</span> <span class="n">n_target</span><span class="p">)</span>
 
+    <span class="c1">#Testing the accuracy on our training data</span>
     <span class="n">forest_predictions</span> <span class="o">=</span> <span class="n">forest_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">n_train</span><span class="p">)</span>
     <span class="n">residuals_f</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">correct_f</span> <span class="o">=</span> <span class="mi">0</span>
@@ -12759,7 +12828,8 @@ Embarked
         <span class="k">if</span> <span class="p">(</span><span class="n">n_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
             <span class="n">correct_f</span> <span class="o">+=</span><span class="mi">1</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Train Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct_f</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals_f</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
-
+    
+    <span class="c1">#Testing the accuracy on our testing data</span>
     <span class="n">forest_predictions_t</span> <span class="o">=</span> <span class="n">forest_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span>
     <span class="n">residuals_f_t</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">correct_f_t</span> <span class="o">=</span> <span class="mi">0</span>
@@ -12771,7 +12841,18 @@ Embarked
         <span class="n">residuals_f_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">test_target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">forest_predictions_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
             <span class="n">correct_f_t</span> <span class="o">+=</span><span class="mi">1</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Test Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct_f_t</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals_f_t</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy of Test Set: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct_f_t</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">residuals_f_t</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+    
+    <span class="c1">#Lets use the same made up people as our linear regression to see how the forest model does</span>
+    <span class="n">rich_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
+    <span class="n">poor_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">old_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+    <span class="n">young_person</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+    <span class="n">fun_predictions</span> <span class="o">=</span> <span class="n">forest_model</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">rich_person</span><span class="p">,</span> <span class="n">poor_person</span><span class="p">,</span> <span class="n">young_person</span><span class="p">,</span> <span class="n">old_person</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a rich person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a poor person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a young person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Predicted chance of survival for a old person: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fun_predictions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12789,126 +12870,84 @@ Embarked
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Round 1
-Accuracy of Train Set: 97.47899159663865%
-Accuracy of Test Set: 80.66465256797584%
-
+Accuracy of Train Set: 97.19887955182072%
+Accuracy of Test Set: 80.06042296072508%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 70.0%.
+Predicted chance of survival for a young person: 100.0%.
+Predicted chance of survival for a old person: 50.0%.
 
 Round 2
-Accuracy of Train Set: 97.19887955182072%
-Accuracy of Test Set: 79.75830815709969%
-
+Accuracy of Train Set: 96.77871148459384%
+Accuracy of Test Set: 82.4773413897281%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 80.0%.
+Predicted chance of survival for a young person: 60.0%.
+Predicted chance of survival for a old person: 70.0%.
 
 Round 3
-Accuracy of Train Set: 97.61904761904762%
-Accuracy of Test Set: 80.96676737160121%
-
+Accuracy of Train Set: 96.77871148459384%
+Accuracy of Test Set: 78.24773413897282%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 30.0%.
+Predicted chance of survival for a young person: 80.0%.
+Predicted chance of survival for a old person: 90.0%.
 
 Round 4
 Accuracy of Train Set: 97.19887955182072%
-Accuracy of Test Set: 78.24773413897282%
-
+Accuracy of Test Set: 77.34138972809667%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 70.0%.
+Predicted chance of survival for a young person: 70.0%.
+Predicted chance of survival for a old person: 50.0%.
 
 Round 5
-Accuracy of Train Set: 97.05882352941177%
-Accuracy of Test Set: 79.75830815709969%
-
+Accuracy of Train Set: 97.19887955182072%
+Accuracy of Test Set: 78.24773413897282%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 50.0%.
+Predicted chance of survival for a young person: 100.0%.
+Predicted chance of survival for a old person: 60.0%.
 
 Round 6
-Accuracy of Train Set: 97.89915966386555%
-Accuracy of Test Set: 78.54984894259819%
-
+Accuracy of Train Set: 96.35854341736695%
+Accuracy of Test Set: 79.45619335347432%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 20.0%.
+Predicted chance of survival for a young person: 90.0%.
+Predicted chance of survival for a old person: 50.0%.
 
 Round 7
-Accuracy of Train Set: 96.63865546218487%
-Accuracy of Test Set: 82.77945619335347%
-
+Accuracy of Train Set: 97.89915966386555%
+Accuracy of Test Set: 78.54984894259819%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 60.0%.
+Predicted chance of survival for a young person: 80.0%.
+Predicted chance of survival for a old person: 60.0%.
 
 Round 8
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/ryanhou/anaconda3/lib/python3.6/site-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
-  from numpy.core.umath_tests import inner1d
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy of Train Set: 97.05882352941177%
-Accuracy of Test Set: 81.57099697885197%
-
+Accuracy of Train Set: 96.49859943977592%
+Accuracy of Test Set: 79.75830815709969%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 50.0%.
+Predicted chance of survival for a young person: 90.0%.
+Predicted chance of survival for a old person: 40.0%.
 
 Round 9
-Accuracy of Train Set: 96.35854341736695%
-Accuracy of Test Set: 81.87311178247734%
-
+Accuracy of Train Set: 96.77871148459384%
+Accuracy of Test Set: 80.96676737160121%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 60.0%.
+Predicted chance of survival for a young person: 70.0%.
+Predicted chance of survival for a old person: 50.0%.
 
 Round 10
-Accuracy of Train Set: 97.19887955182072%
-Accuracy of Test Set: 81.26888217522658%
-
-
-Round 11
-Accuracy of Train Set: 97.05882352941177%
-Accuracy of Test Set: 79.45619335347432%
-
-
-Round 12
-Accuracy of Train Set: 97.05882352941177%
-Accuracy of Test Set: 81.87311178247734%
-
-
-Round 13
-Accuracy of Train Set: 97.05882352941177%
-Accuracy of Test Set: 78.24773413897282%
-
-
-Round 14
-Accuracy of Train Set: 96.9187675070028%
-Accuracy of Test Set: 78.85196374622356%
-
-
-Round 15
-Accuracy of Train Set: 98.17927170868347%
-Accuracy of Test Set: 79.75830815709969%
-
-
-Round 16
-Accuracy of Train Set: 97.75910364145658%
-Accuracy of Test Set: 79.75830815709969%
-
-
-Round 17
-Accuracy of Train Set: 97.19887955182072%
-Accuracy of Test Set: 81.57099697885197%
-
-
-Round 18
-Accuracy of Train Set: 97.05882352941177%
-Accuracy of Test Set: 79.45619335347432%
-
-
-Round 19
-Accuracy of Train Set: 97.47899159663865%
-Accuracy of Test Set: 79.45619335347432%
-
-
-Round 20
-Accuracy of Train Set: 96.49859943977592%
-Accuracy of Test Set: 79.15407854984895%
-
+Accuracy of Train Set: 97.61904761904762%
+Accuracy of Test Set: 80.66465256797584%
+Predicted chance of survival for a rich person: 100.0%.
+Predicted chance of survival for a poor person: 30.0%.
+Predicted chance of survival for a young person: 70.0%.
+Predicted chance of survival for a old person: 50.0%.
 
 </pre>
 </div>
@@ -12917,6 +12956,36 @@ Accuracy of Test Set: 79.15407854984895%
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>WHAT HAVE WE LEARNED</h2><p>Through this tutorial, we have scrapped only the surface of data science, but hopefully enough to get a flavor for what data science is about.  Topics discussed in this tutorial included:</p>
+<p><h3>Data Collection</h3>
+We were able to take CSV files from the web as datasets and do some pretty cool stuff with them.</p>
+<p><h3>Working with the Data</h3>
+Through this tutorial, we have seen that the data wasn't 100% perfect, so we had to check for NaNs before we could use the data.</p>
+<p><h3>One-Hot-Key Encoding</h3>
+Sometimes we have to deal with categorical data, and we need to translate/encode these categories as separate attributes.  In our case we encoded Sex as 1 if male and 0 if not male (or female).</p>
+<p><h3>How to Set up a model</h3>
+Before we can jump into training and prediction, we need to know which pieces of data are important or could affect the outcome.  We chose attributes like age, sex, and more as part of attributes that could affect survival rate.</p>
+<p><h3>Fitting and Analyzing Model Performance</h3>
+With both our linear regression model and our random forest regression, we wanted to test how well both performed on the train and test sets.  We did this by keeping a tally of how many predictions it got right over the total predictions made to give us a percentage of accuracy.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>CONCLUSION!!</h2><p>Firstly, if you are reading this and have made it through my tutorial, I congratulate you for sticking all the way till the end!  You are truly amazing for that and would like to give you a golden star!  I want to thank my professors, Dickerson and Saggar as well as the hard working TAs for an awesome semester in CMSC320!</p>
+<p><em>If you have any questions, feel free to contact me via email at matthewhou732@gmail.com</em>
+&lt;img src = 'star.jpg'&gt;</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
